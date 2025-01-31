@@ -43,7 +43,14 @@ def progress_bar(progress, total, infile):
 def rawpy_process(path, output_dir):
     try:
         with rawpy.imread(path) as raw:
-            rgb = raw.postprocess()
+            rgb = raw.postprocess(
+                no_auto_bright=True, # do not apply auto brightness ( use camera white balance )
+                use_camera_wb=True, # use camera white balance
+                output_bps=8, # for jpeg
+                no_auto_scale=True,
+                output_color=rawpy.ColorSpace.sRGB,
+                user_qual=100
+            )
             output_filename = os.path.join(output_dir, os.path.basename(path)[:-4] + '.jpg')
             imageio.imwrite(output_filename, rgb)
     except Exception as e:
