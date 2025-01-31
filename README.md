@@ -1,3 +1,5 @@
+[![Python application](https://github.com/loonip/orf-to-jpg/actions/workflows/python-app.yml/badge.svg)](https://github.com/loonip/orf-to-jpg/actions/workflows/python-app.yml)
+
 # **ORF to JPEG Converter**
 This Python script processes Olympus RAW (.ORF) image files by converting them to JPEG format. It scans a specified directory (or the current directory by default) for `.ORF` files and uses the `rawpy` library to process the images before saving them as `.jpg` files in a designated output directory (`jpeg-ed`).
 
